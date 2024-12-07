@@ -1,5 +1,17 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
+    '@vueuse/nuxt',
+    '@nuxtjs/color-mode'
+  ],
+  colorMode: {
+    classSuffix: ''
+  },
+  runtimeConfig: {
+    public: {
+      postDataWebhookUrl: process.env.POST_DATA_WEBHOOK_URL
+    }
+  },
   devtools: { enabled: false }
 })
